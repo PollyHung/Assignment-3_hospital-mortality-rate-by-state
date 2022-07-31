@@ -20,16 +20,16 @@ best <- function(x, y){
     stop('invalid outcome')
   }
   ## Order our list by state and heart attack
-  ## first select the state, here we use subset to isolate the rows 
+  ## first select the state, I used filter function to isolate the rows  
   table_3 <- filter(table_2, table_2$state == x)
-  ## then sort the new table by heart attack value from smallest to largest 
+  ## sort the new table by heart attack value from smallest to largest, the arrange() function is in dplyr package while %>% is in magrittr package
   table_4 <- table_3 %>% arrange(`heart attack`)
-  ## then select the rows with minimum mortality value 
+  ## select the rows with minimum mortality value 
   table_5 <- filter(table_4, `heart attack` == min(`heart attack`)) %>% 
     filter(1:n() == 1)
-  ## then sort the new table by alphabet of the hospital 
+  ## sort the new table by alphabet of the hospital 
   table_6 <- table_5[order(rownames(table_5)), ]
-  ## then select the first row (with the smallest mortality)
+  ## select the first row (with the smallest mortality)
   table_7 <- table_6[1, ]
   ## Return hospital name 
   print(table_7[1, 1])
