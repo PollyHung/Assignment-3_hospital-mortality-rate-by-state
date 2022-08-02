@@ -37,13 +37,13 @@ rank_hospital <- function(State, Outcome, Num){
   #use rank() function to Creating a column with Ranks of values! 
   table_5$Rank <- rank(table_5$`heart attack`, ties.method = "first")
           #print(table_5) 
-  #select the correct roles. 
+  #select the correct roles using a for loop and if function 
   for (i in Num){
-    if (i=='best') {
+    if (i=='best') {  ##if the value passed to "Num" is "best", then the first row of table_5 is selected 
       table_6 <- head(table_5, n = 1)
-    } else if (i=='worst') {
+    } else if (i=='worst') {   ##if the value passed to "Num" is "worst", then the last row of table_5 is selected 
       table_6 <- tail(table_5, n = 1)
-    } else {
+    } else {  ##if the value passed to "Num" is an integer. Any integer over the range of table_5$Rank will result in output of NA
       table_6 <- table_5[table_5$Rank == Num, ]
     }
   }
