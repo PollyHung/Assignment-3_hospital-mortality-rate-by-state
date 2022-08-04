@@ -1,3 +1,7 @@
+#this is a simplified version of this assignment, just to practice on how to write functions. 
+#A complete version that satisfied all the requirments on rubric is in another file named best_1.R.
+
+
 best <- function(x, y){
   ## set the working directory and library the needed packages 
   setwd("~/Desktop/rprog_data_ProgAssignment3-data")
