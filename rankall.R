@@ -3,7 +3,7 @@
 
 #...........ᕕ( ᐛ )ᕗ__________________________________________________________________________________________________________________________________
 rankall <- function(outcome, num="best") {
-#......................ᕕ( ᐛ )ᕗ
+#......................ᕕ( ᐛ )ᕗ_______________________________________________________________________________________________________________________
   #set the working directory 
   setwd("~/Desktop/Summer school/Data science [Specialization]/R programming /Week 4/rprog_data_ProgAssignment3-data")
   library(magrittr)
