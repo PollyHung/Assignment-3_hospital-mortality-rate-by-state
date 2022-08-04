@@ -1,4 +1,4 @@
-best_1 <- function(state_name, outcome_name){
+best <- function(state_name, outcome_name){
 
 #...........ᕕ( ᐛ )ᕗ__________________________________________________________________________________________________________________________________
   ## set the working directory and library the needed packages 
