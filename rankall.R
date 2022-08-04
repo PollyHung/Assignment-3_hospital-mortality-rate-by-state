@@ -26,10 +26,10 @@ rankall <- function(outcome, num="best") {
 #...............................................................................ᕕ( ᐛ )ᕗ______________________________________________________________
   #Return hospital name in that state with the given rank & preparation before for-loop
   #create a list of states to iterate over. 
-  state_list = unique(table_2$state)
+  state_list = sort(unique(table_2$state)) #remove the repetitive state names, sort the 54 state names alphabetically
   state_list = as.list(state_list) #we created a list of 54 
-  #re-order the list via priority of state -> heart attack -> hospital 
-  table_3 <- table_2[order(table_2$state, table_2$`heart attack`, table_2$hospital), ]
+  #re-order the list via priority of state (alphabetically) -> heart attack -> hospital 
+  table_3 <- table_2[order(table_2$state, table_2$`heart attack`, table_2$hospital), ] 
   #n is a large list with 54 elements, each element is a data frame with nrows and 3 columns 
   new_list <- split(table_3, table_3$state) 
   #create an empty vector
